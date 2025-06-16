@@ -1,0 +1,277 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+/*CSS for Login Page*/
+#auth-container {
+  background-color: #444444;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-form button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #45a049;
+}
+
+.auth-form p {
+  color: white;
+  text-align: center;
+}
+
+.auth-form span {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.auth-form span:hover {
+  text-decoration: underline;
+}
+/*End of CSS for Login Page*/
+
+/*CSS for home page */
+#home-container {
+  background-color: #444444;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+}
+
+#home-container h1{
+  color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+#game-options {
+  margin-top: 20px;
+}
+
+#start-game{
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-game:hover{
+  background-color: #45a049;
+}
+
+#logout {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f88238;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#logout:hover {
+  background-color: #ff6f16;
+}
+
+#delete-account-btn{
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff1100;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#delete-account-btn:hover {
+  background-color: #e53935;
+}
+.cell:hover {
+background-color: #ddd;
+}
+
+#viewHistory {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #37daf3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#viewHistory:hover {
+  background-color: #2cb1c5;
+}
+
+
+/*End of the CSS for home page */
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.cell.taken {
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .game-container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+}
+.game-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #444444;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.game-container h1{
+  color: white;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.join-btn {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #45a049;
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Game page Tic Tac Toe Board */
+
+#game-board {
+  width: 312px;
+  height: 312px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(3, 1fr);    /* 3 rows */
+  margin: 0 auto;
+}
+
+
+/* Style for each individual cell */
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #000000;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+
+}
+
+#home-btn{
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#home-btn:hover {
+  background-color: #45a049;
+}
