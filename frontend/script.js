@@ -1,5 +1,5 @@
-const backendURL = "http://localhost:3000";
-const socket = io("http://localhost:3000");
+const backendURL = "https://tic-tac-toe-backend-dyms.onrender.com";
+const socket = io("https://tic-tac-toe-backend-dyms.onrender.com");
 // Listen for socket connection
 socket.on("connect", () => {
   console.log("Connected with socket ID:", socket.id);
