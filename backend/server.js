@@ -37,7 +37,7 @@ server.listen(PORT, () => {
 });
 
 //path for the frontend
-app.use(express.static(path.join(__dirname, "../tic-tac-toe-frontend")));
+app.use(express.static(path.join(__dirname, "../frontend")));
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 
 // Secret key for JWT
@@ -72,9 +72,7 @@ function authenticateToken(req, res, next) {
 
 // Home route
 app.get("/", (req, res) => {
-  const file = res.sendFile(
-    path.join(__dirname, "../tic-tac-toe-frontend", "login-signup.html")
-  ); // Serve the login-signup.html file
+  const file = res.sendFile(path.join(__dirname, "../frontend", "index.html")); // Serve the login-signup.html file
 });
 
 // User registration route
@@ -165,15 +163,11 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/game", authenticateToken, (req, res) => {
-  const file = res.sendFile(
-    path.join(__dirname, "../tic-tac-toe-frontend", "game.html")
-  );
+  const file = res.sendFile(path.join(__dirname, "../frontend", "game.html"));
 });
 
 app.post("/home", authenticateToken, (req, res) => {
-  const file = res.sendFile(
-    path.join(__dirname, "../tic-tac-toe-frontend", "home.html")
-  );
+  const file = res.sendFile(path.join(__dirname, "../frontend", "home.html"));
 });
 // Delete user account route
 app.delete("/deleteAccount", authenticateToken, async (req, res) => {
